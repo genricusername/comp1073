@@ -6,17 +6,20 @@ let buttonFive = 0;
 
 
 function random(){
-    buttonOne = Math.floor(Math.random() * 7) + 1;
-    buttonTwo = Math.floor(Math.random() * 7) + 1;
-    buttonThree  = Math.floor(Math.random() * 7) + 1;
-    buttonFour = Math.floor(Math.random() * 7) + 1;
-    buttonFive = Math.floor(Math.random() * 7) + 1;
+    buttonOne = Math.floor(Math.random() * 7);
+    buttonTwo = Math.floor(Math.random() * 7);
+    buttonThree  = Math.floor(Math.random() * 7);
+    buttonFour = Math.floor(Math.random() * 7);
+    buttonFive = Math.floor(Math.random() * 7);
     random = false;
     firstP(buttonOne);
 };
 
 document.querySelector("div button:nth-of-type(1)").addEventListener("click", function(){
     buttonOne++;
+    if(buttonOne === 7){
+        buttonOne = 0;
+    }
     firstP(buttonOne);
 });
 
@@ -41,22 +44,6 @@ document.querySelector("div button:nth-of-type(6)").addEventListener("click", fu
 });
 
 function firstP(buttonOne){
-    if(buttonOne === 1){
-    document.querySelector("div p:nth-of-type(1)").textContent ="The turkey";
-    } else if(buttonOne === 2){
-    document.querySelector("div p:nth-of-type(1)").textContent = "Mom";
-    } else if(buttonOne === 3){
-    document.querySelector("div p:nth-of-type(1)").textContent = "Dad";
-    }else if(buttonOne === 4){
-    document.querySelector("div p:nth-of-type(1)").textContent = "the dog";
-    }else if(buttonOne === 5){
-    document.querySelector("div p:nth-of-type(1)").textContent = "my teacher" ;
-    }else if(buttonOne === 6){
-    document.querySelector("div p:nth-of-type(1)").textContent = "the elephant";  
-    }else if(buttonOne === 7){
-    document.querySelector("div p:nth-of-type(1)").textContent = "the cat";
-    }else if(buttonOne <= 8){
-    buttonOne = 1;
-    }
-    return buttonOne;
+    const wordsOne = ["The turkey", "Mom", "Dad", "The dog", "my teacher", "The elephant", "The cat"];
+    document.querySelector("div p:nth-of-type(1)").textContent = wordsOne[buttonOne];
 }
