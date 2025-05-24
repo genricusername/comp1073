@@ -3,15 +3,16 @@ let buttonTwo = 0;
 let buttonThree = 0;
 let buttonFour = 0;
 let buttonFive = 0;
-let random = false;
 
-if (random === true){
+
+function random(){
     buttonOne = Math.floor(Math.random() * 7) + 1;
     buttonTwo = Math.floor(Math.random() * 7) + 1;
     buttonThree  = Math.floor(Math.random() * 7) + 1;
     buttonFour = Math.floor(Math.random() * 7) + 1;
     buttonFive = Math.floor(Math.random() * 7) + 1;
     random = false;
+    firstP(buttonOne);
 };
 
 document.querySelector("div button:nth-of-type(1)").addEventListener("click", function(){
@@ -36,7 +37,7 @@ document.querySelector("div button:nth-of-type(5)").addEventListener("click", fu
 });
 
 document.querySelector("div button:nth-of-type(6)").addEventListener("click", function(){
-    random = true;
+    random();
 });
 
 function firstP(buttonOne){
