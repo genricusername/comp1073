@@ -3,7 +3,11 @@ let buttonTwo = 0;
 let buttonThree = 0;
 let buttonFour = 0;
 let buttonFive = 0;
+let myArray = [12, 45, 26, 68, 92];
 
+let myVar = myArray.unshift(73, 29);
+
+console.log(myVar);
 //depending on which button is pressed add one to the buttonX, if its higher than or equal to 7 reset it to 0 than pass that to the function
 document.querySelector("div button:nth-of-type(1)").addEventListener("click", function(){
     buttonOne++;
